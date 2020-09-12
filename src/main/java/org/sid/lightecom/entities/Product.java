@@ -19,6 +19,9 @@ public class Product implements Serializable {
     private boolean selected;
     private boolean available;
     private String photoName;
+    // champs @Transient ne sera pas dans la bdd il est seulement envoyer au front en json (champs pas persistant, besoin seulement côté client)
+    @Transient
+    private int quantity = 1;
     @ManyToOne
     private Category category;
 
